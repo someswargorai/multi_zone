@@ -1,0 +1,17 @@
+{
+  "name": "micro-frontend-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w apps/host-shell\" \"npm run dev -w apps/shop-remote\" \"npm run dev -w apps/account-remote\" \"npm run dev -w apps/cart-remote\"",
+    "build": "npm run build --workspaces --if-present",
+    "start":"concurrently \"npm run start -w apps/host-shell\" \"npm run start -w apps/shop-remote\" \"npm run start -w apps/account-remote\" \"npm run dev -w apps/cart-remote\""
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
