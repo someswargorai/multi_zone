@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
+const assetPrefix = process.env.VERCEL_URL;
+
 const nextConfig: NextConfig = {
-  assetPrefix: 'http://localhost:3003',
+  assetPrefix: assetPrefix,
   transpilePackages: ["@repo/ui-shared", "@repo/utils"],
 };
 
